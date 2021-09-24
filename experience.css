@@ -1,0 +1,215 @@
+/*our css*/
+/*font face */
+@font-face {
+    src: url('fonts1/NotoSans-Italic.ttf');
+    font-family: 'noto';
+
+}; 
+
+
+
+
+/* select all and make 0 px for margin and padding and color every text with  #f5efef and a font family of noto*/
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin: 0;
+    color: #f5efef;   
+     
+}
+
+/*every unordered list and ordered list must neglect the list-style*/
+ul, ol{
+    list-style: none;
+}
+
+
+/*
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital@1&display=swap" rel="stylesheet"> 
+font-family: 'Noto Sans', sans-serif;
+*/
+
+
+
+/*
+    makee the background for the body and display flex to make it more easy , 
+    spacebetween alow us to make an equal distance between divs
+*/
+body{
+    background-color: #343a40;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*select the nav and give it a width and a min-height to make it more dynamic when scrolling that fits 
+the window because the screen is 100vh , ovverflow hidden is when ever any thing is out of the nav will 
+be hidden, padding  of 10px because the informations are at he edge of the nav  */
+nav{
+    width:23%;
+    min-height:100vh;
+    overflow: hidden;
+    padding:10px;
+    background:rgba(128, 93, 93, 0.671);
+    box-shadow: 7px 8px 10px #00b3ff80; 
+    font-family: 'noto';  
+    color: #f5efef;
+}
+
+/*second part is the div that contains the header and the section and the footer,a width of 75% 
+beacuse we have the width of the nav 23% so 100%-75%-23%=2%, so we want that 2% be the margin between them
+and we have set that already by saying space between , remark:we have to declare display flex to allow
+us to use tha space between*/
+.secondpart{
+    width:75%;
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    color: #f5efef;
+}
+
+/* every h1 and h2 and in the secondiv must have these caractistics*/
+.secondpart header h1,.secondpart section  h2, .secondpart section iframe h2, .secondpart footer div h2{
+    text-align: center;
+    text-decoration: underline;
+    color: #000;
+}
+
+/* css of the header with diffrent background of the body */
+.secondpart header {
+   
+    padding: 10px;
+    box-shadow: 5px 2px 10px #00b3ff80;
+    border-radius: 5px;
+    background:rgba(128, 93, 93, 0.4);
+    font-size: 15px;
+    font-family: 'noto';
+}
+
+/* menu caractiristics, display flex to make the divs inside inline and the space around to give an equal
+margin for every div from the start to the end */
+.secondpart header menu{
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.secondpart header menu a button{
+    /*neglect the default value of the border of the button*/
+    border:none;
+    width:250px;
+    height:30px;
+    /* line height to make the text in the middle of the height of the div*/
+    line-height: 30px;
+    text-align: center;
+    /*letter spacing allow us to make a distance between letters*/
+    letter-spacing: 1.2;
+    color: #fff;
+    /*8px for border radius to neglect the edges of the button*/
+    border-radius:8px;
+    background-color:#0046ff;
+    /*transition for the annimation*/
+    transition: all .3s ease-in;
+    /*pointer cursor*/
+    cursor: pointer;
+}
+
+/*on hover the button , the border and the background changes*/
+.secondpart header menu a button:hover{
+    border:2px solid  #0046ff;
+    background:transparent;
+
+}
+
+/*set the value of the text decoration of the a tag*/
+.secondpart header menu  a{
+    text-decoration: none;
+}
+
+/* style the div that contains the photo , min height and max height is because the images are diffrent whenever
+you put an image it select it self automatically , if it is big picture it will set at the max value*/
+nav .photo{
+    overflow: hidden;
+    width:65%;
+    min-height: 24vh;
+    max-height:33vh;
+    margin: 5px 17.5%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px   black;
+    transition: scale .2s ease-in;
+}
+
+
+/*a value of 100% for thewidth and the height because it is inside the photo div*/
+nav .photo a img{
+    width:100%;
+}
+
+/* on hover the image scale it "make a zoom" */
+nav .photo:hover{
+    scale: 1.2;
+}
+
+/*style the section part , auto height because we dont know which height it will*/
+.secondpart section{
+    width:100%;
+    height: auto;
+    font-size: 15px;
+    padding:5px 0 10px 5px;
+    font-family: 'noto',sans-serif;
+}
+
+/* style the iframe */ 
+.secondpart section iframe{
+    width:100%;
+    min-height:50vh;
+    border: none;
+
+}
+/* styling the footer and give it a diffrent background from the body and min-height because it may contain
+many lists, margin-to- auto because we want it at the bottom but the container '.secondpart' must be dispayed flex 
+and a flex-dirction column*/
+.secondpart footer{
+    background:rgba(128, 93, 93, 0.4);
+    font-family: sans-serif;
+    color:rgb(196, 189, 189);
+    min-height:10vh;
+    border-radius: 5px;
+    display:flex;
+    justify-content: space-around;
+    margin-top: auto;
+    box-shadow: 7px 5px 10px #00b3ff80;
+}
+
+/*any div inde the footer give it a padding and a specific width*/
+.secondpart footer div{
+    padding:10px;
+    width: 45%;
+    font-size: 15px;
+}
+
+/**/
+.secondpart footer .list2 ul li{
+    margin-top: 10px;
+    cursor: default;
+}
+.secondpart footer .list1 ol li{
+    margin-top: 10px;
+    cursor: default;
+    letter-spacing: 1.2;
+    transition: all .3s ease-in-out;
+}
+
+/**/
+.secondpart footer .list1 ol li:hover{
+    color:#fff;
+    scale: 1.01;
+}
+/* make*/
+
+.informations div h4{
+    font-weight: 200;
+}
