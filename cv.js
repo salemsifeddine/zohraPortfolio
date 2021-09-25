@@ -148,3 +148,31 @@ function send(container, pagename){
   //lastly we send the html page
   xhr.send();
 }
+
+//when click on btn get href attribute and then add .jpg to get image name dynamically
+//and then make it a background to the section div
+var btnsheader = document.querySelectorAll('.btn')
+
+//loop through the aaray of btns
+btnsheader.forEach(btn=>{
+
+  //on click on btn
+  btn.addEventListener('click',function(){
+
+    //get section div in array 
+    var section=document.getElementsByTagName('section');
+
+    //select our section
+    var sectiondiv=section[0];
+
+    //access the parent and get the href then replace and lower case
+    var hrefmodified=btn.parentElement.getAttribute('href').replace('/','.').toLowerCase();
+
+    //change the background
+    sectiondiv.style.background='url('+ hrefmodified + 'jpg)';
+   
+    
+  }
+  )
+
+})

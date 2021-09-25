@@ -38,7 +38,7 @@ font-family: 'Noto Sans', sans-serif;
     spacebetween alow us to make an equal distance between divs
 */
 body{
-    background-color: #343a40;
+   background-image: url('body.jpg');
     display: flex;
     justify-content: space-between;
 }
@@ -51,10 +51,11 @@ nav{
     min-height:100vh;
     overflow: hidden;
     padding:10px;
-    background:rgba(128, 93, 93, 0.671);
+    background:rgba(128, 93, 93, 0.451);
     box-shadow: 7px 8px 10px #00b3ff80; 
     font-family: 'noto';  
     color: #f5efef;
+    border-radius: 10px;
 }
 
 /*second part is the div that contains the header and the section and the footer,a width of 75% 
@@ -67,7 +68,7 @@ us to use tha space between*/
     display: flex;
     flex-direction: column;
     padding: 10px;
-    color: #f5efef;
+    color: #000;
 }
 
 /* every h1 and h2 and in the secondiv must have these caractistics*/
@@ -79,8 +80,9 @@ us to use tha space between*/
 
 /* css of the header with diffrent background of the body */
 .secondpart header {
-   
-    padding: 10px;
+    min-height: 10vh;
+    max-height: auto;
+    padding: 4px;
     box-shadow: 5px 2px 10px #00b3ff80;
     border-radius: 5px;
     background:rgba(128, 93, 93, 0.4);
@@ -155,11 +157,14 @@ nav .photo:hover{
 
 /*style the section part , auto height because we dont know which height it will*/
 .secondpart section{
-    width:100%;
-    height: auto;
+    width:99%;
+    min-height:80vh;
     font-size: 15px;
-    padding:5px 0 10px 5px;
+    padding:2px 0 5px 10px;
     font-family: 'noto',sans-serif;
+    object-fit:cover;
+    border-radius: 4px;
+    
 }
 
 /* style the iframe */ 
@@ -175,7 +180,7 @@ and a flex-dirction column*/
 .secondpart footer{
     background:rgba(128, 93, 93, 0.4);
     font-family: sans-serif;
-    color:rgb(196, 189, 189);
+    color:rgb(255, 255, 255);
     min-height:10vh;
     border-radius: 5px;
     display:flex;
@@ -195,17 +200,18 @@ and a flex-dirction column*/
 .secondpart footer .list2 ul li{
     margin-top: 10px;
     cursor: default;
+    transition: all .2s ease-in-out;
 }
 .secondpart footer .list1 ol li{
     margin-top: 10px;
-    cursor: default;
+    cursor: pointer;
     letter-spacing: 1.2;
-    transition: all .3s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 
 /**/
-.secondpart footer .list1 ol li:hover{
-    color:#fff;
+.secondpart footer .list1 ol li:hover,.secondpart footer .list2 ul li:hover{
+    color:#000;
     scale: 1.01;
 }
 /* make*/
